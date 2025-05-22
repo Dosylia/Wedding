@@ -1,0 +1,12 @@
+<section class="gallery-section">
+    <h1>Gallery</h1>
+    <p>Welcome to the gallery! Here you can find a collection of images.</p>
+    
+    <div class="gallery">
+        <?php foreach ($entries as $entry): ?>
+            <div class="gallery-item">
+                <img src="public/<?= htmlspecialchars($entry['image_path']) ?>" alt="<?= htmlspecialchars($entry['message']) ?>">
+            </div>
+        <?php endforeach; ?>
+    </div>
+</section>

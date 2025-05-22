@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wedding Guestbook</title>
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Bernard & Nathalie</h1>
+        <p>7 Juin 2025 — Partagez vos moments préférés 💍</p>
+    </header>
+
+    <img class="header-image" src="public/images/bernard-nathalie.png" alt="Hero Image">
+
+    <nav>
+        <a href="home">Accueil</a>
+        <a href="gallery">Galerie</a>
+    </nav>
+
+    <main>
+        <?php if(isset($_GET['message'])) :?>
+            <span class="form-error"><?= $_GET['message'] ?></span>
+        <?php endif; ?>
+        <?php require $template.".phtml"; ?> 
+    </main>
+
+</body>
+</html>

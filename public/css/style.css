@@ -1,0 +1,383 @@
+/* Base Styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #fffaf5 url('https://www.transparenttextures.com/patterns/cream-paper.png');
+    color: #5a4d3e;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    padding: 2rem 1rem 2rem;
+    border-bottom: none;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, #c89e47, #e8d3b0, #c89e47);
+}
+
+.header-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
+
+header h1 {
+    font-family: "Parisienne", cursive;
+    font-size: 4.5rem;
+    letter-spacing: 2px;
+    margin: 1rem 0 0.5rem;
+    text-shadow: 2px 2px 4px rgba(200, 158, 71, 0.1);
+    color: black;
+}
+
+header p {
+    font-size: 2rem;
+    color: black;
+    margin: 0.5rem 0;
+    font-family: "Great Vibes", cursive;
+}
+
+header p::after {
+    content: '✨';
+    margin-left: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: background 0.3s;
+    font-family: "Great Vibes", cursive;
+    font-size: 2em;
+}
+
+nav a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Container */
+.container {
+    max-width: 1000px;
+    padding: 0 2rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .entry:not(:last-child)::after {
+        content: '';
+        display: block;
+        height: 2px;
+        width: 60%;
+        background: url('../images/floral-divider.png') center/contain no-repeat;
+        margin: 2rem auto 0;
+    }
+
+    .entry {
+        animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0; transform: translateY(10px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+
+/* Form Styling */
+.guestbook-form {
+    background: #fff;
+    border: 2px solid #e8d3b0;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(200, 158, 71, 0.08);
+    position: relative;
+    margin: -40px auto 4rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.guestbook-form h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.guestbook-form h2::after {
+    content: '💮';
+    position: absolute;
+    right: -10px;
+    top: -15px;
+    font-size: 1.8rem;
+}
+
+/* Form Fields */
+.guestbook-form input,
+.guestbook-form textarea {
+    width: 100%;
+    font-size: 1.1rem;
+    border: 2px solid #e8d3b0;
+    padding: 1.2rem;
+    border-radius: 12px;
+    margin-bottom: 1.2rem;
+    transition: all 0.3s ease;
+    background-color: #fffdf8;
+    resize: vertical;
+}
+
+.guestbook-form input:focus,
+.guestbook-form textarea:focus {
+    border-color: #c89e47;
+    box-shadow: 0 0 8px rgba(200, 158, 71, 0.2);
+    outline: none;
+}
+
+/* File Upload */
+.file-upload {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem;
+    border: 2px dashed #c89e47;
+    background: #fdfaf6;
+    color: #7a6a5a;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.file-upload input[type="file"] {
+    display: none;
+}
+
+/* Submit Button */
+.guestbook-form button {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, #c89e47, #d8b15d);
+    color: white;
+    text-transform: uppercase;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.guestbook-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(200, 158, 71, 0.3);
+}
+
+/* Entries */
+.entry {
+    background: #fff;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 15px;
+    border-left: 8px solid #c89e47;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+}
+
+.entry::before {
+    content: '“';
+    position: absolute;
+    left: -30px;
+    top: -20px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 6rem;
+    color: rgba(200, 158, 71, 0.3);
+}
+
+.entry h3 {
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+}
+
+.entry h3::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e8d3b0;
+    margin-left: 1rem;
+}
+
+.entry-date {
+    font-size: 0.9rem;
+    color: #9e8e7a;
+    margin-bottom: 1rem;
+}
+
+.entry p {
+    margin-top: 0.5rem;
+    white-space: pre-wrap;
+}
+
+.entry img {
+    max-width: 100%;
+    margin-top: 1rem;
+    border: 3px solid #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: zoom-in;
+    transition: transform 0.3s;
+}
+
+.entry img:hover {
+    transform: scale(1.03);
+}
+
+/* No Entries */
+.no-entry {
+    font-style: italic;
+    color: #a89b8b;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90vh;
+    border: 3px solid #fff;
+    border-radius: 12px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal-close:hover {
+    color: #ddd;
+}
+
+/* Extra: Couple image & intro */
+.wedding-couple {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin: -90px auto 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.guestbook-intro {
+    text-align: center;
+    max-width: 600px;
+    margin: 2rem auto 4rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #7a6a5a;
+}
+
+/* Gallery design */
+
+.gallery-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3rem;
+    }
+
+    .guestbook-form {
+        padding: 2rem;
+        margin-top: -60px;
+    }
+
+    .entry::before {
+        left: -15px;
+        top: -10px;
+        font-size: 4rem;
+    }
+}

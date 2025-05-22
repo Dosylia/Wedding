@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /wedding-guestbook/
+
+# Skip existing files and folders
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite clean URLs like /home to index.php?action=home
+RewriteRule ^([^/]+)/?$ index.php?action=$1 [QSA,L]
